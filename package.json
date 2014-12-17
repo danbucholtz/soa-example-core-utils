@@ -1,0 +1,10 @@
+{
+  "name": "soa-example-core-utils",
+  "version": "0.0.0",
+  "description": "Set of core utilities",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Dan Bucholtz"
+}
