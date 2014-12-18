@@ -8,6 +8,6 @@
   },
   "author": "Dan Bucholtz",
   "dependencies" :{
-  	"soa-example-service-config": "git://github.com/danbucholtz/soa-example-service-config",
+  	"soa-example-service-config": "git://github.com/danbucholtz/soa-example-service-config"
   }
 }
