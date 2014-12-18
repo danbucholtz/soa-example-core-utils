@@ -6,5 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "Dan Bucholtz"
+  "author": "Dan Bucholtz",
+  "dependencies" :{
+  	"soa-example-service-config": "git://github.com/danbucholtz/soa-example-service-config",
+  }
 }
