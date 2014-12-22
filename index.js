@@ -27,15 +27,15 @@ var decryptString = function(input){
 };
 
 var get = function(url){
-	getInternal(false, null, null, null, url);
+	return getInternal(false, null, null, null, url);
 };
 
 var getWithAccessToken = function(accessToken, url){
-	getInternal(true, null, null, accessToken, url);
+	return getInternal(true, null, null, accessToken, url);
 };
 
 var getWithEmailAddressAndPassword = function(emailAddress, password, url){
-	getInternal(true, emailAddress, password, null, url);
+	return getInternal(true, emailAddress, password, null, url);
 };
 
 var getInternal = function(authEnabled, emailAddress, password, accessToken, url){
