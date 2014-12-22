@@ -1,6 +1,7 @@
 var config = require("soa-example-service-config").config();
 var crypto = require('crypto');
 var Q = require("q");
+var request = require("request");
 
 var algorithm = 'aes256'; // or any other algorithm supported by OpenSSL
 var key = 't0k3|\|$br0';
