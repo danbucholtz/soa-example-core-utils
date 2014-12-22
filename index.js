@@ -47,7 +47,8 @@ var getInternal = function(authEnabled, emailAddress, password, accessToken, url
 				deferred.reject(err);
 			}
 			else{
-				deferred.resolve(body);
+				var toReturn = JSON.parse(body);
+				deferred.resolve(toReturn);
 			}
 		}).auth(emailAddress, password, accessToken);
 	}
@@ -57,7 +58,8 @@ var getInternal = function(authEnabled, emailAddress, password, accessToken, url
 				deferred.reject(err);
 			}
 			else{
-				deferred.resolve(body);
+				var toReturn = JSON.parse(body);
+				deferred.resolve(toReturn);
 			}
 		});
 	}
@@ -98,8 +100,8 @@ var postJsonInternal = function(authEnabled, emailAddress, password, accessToken
 				deferred.reject(error.toString());
 				return;
 			}
-
-			deferred.resolve(body);
+			var toReturn = JSON.parse(body);
+			deferred.resolve(toReturn);
 
 		}).auth(emailAddress, password, accessToken);
 	}
@@ -111,7 +113,8 @@ var postJsonInternal = function(authEnabled, emailAddress, password, accessToken
 				return;
 			}
 
-			deferred.resolve(body);
+			var toReturn = JSON.parse(body);
+			deferred.resolve(toReturn);
 
 		});
 	}
