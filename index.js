@@ -82,10 +82,13 @@ var postJsonInternal = function(authEnabled, emailAddress, password, accessToken
 
 	var jsonToPost = objectToJson(objectToPost);
 
+	console.log(jsonToPost);
+
 	var options = {
 		uri: url,
 		method: "POST",
-		json: jsonToPost
+		body: objectToPost,
+		json: true
 	};
 
 	if ( authEnabled ){
