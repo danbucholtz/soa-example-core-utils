@@ -114,7 +114,7 @@ var postJsonInternal = function(authEnabled, emailAddress, password, accessToken
 	}
 	
 
-	return deferred;
+	return deferred.promise;
 };
 
 var objectToJson = function(object){
