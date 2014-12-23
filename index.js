@@ -42,6 +42,7 @@ var getInternal = function(authEnabled, emailAddress, password, accessToken, url
 	var deferred = Q.defer();
 
 	if ( authEnabled ){
+
 		request.get(url, function(err, response, body){
 			if ( err ){
 				deferred.reject(err);
@@ -59,7 +60,7 @@ var getInternal = function(authEnabled, emailAddress, password, accessToken, url
 
 				deferred.resolve(toReturn);
 			}
-		}).auth(emailAddress, password, accessToken);
+		}).auth(emailAddress, password, true, accessToken);
 	}
 	else{
 		request.get(url, function(err, response, body){
@@ -127,7 +128,7 @@ var postJsonInternal = function(authEnabled, emailAddress, password, accessToken
 
 			deferred.resolve(body);
 
-		}).auth(emailAddress, password, accessToken);
+		}).auth(emailAddress, password, true, accessToken);
 	}
 	else{
 		request(options, function(error, response, body){
