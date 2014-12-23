@@ -47,7 +47,16 @@ var getInternal = function(authEnabled, emailAddress, password, accessToken, url
 				deferred.reject(err);
 			}
 			else{
-				var toReturn = JSON.parse(body);
+				// check if the body is json or an object
+				var toReturn = body;
+				try{
+					var object = JSON.parse(body);
+					toReturn = object;
+				}
+				catch(ex){
+					// not json, ignore it
+				}
+
 				deferred.resolve(toReturn);
 			}
 		}).auth(emailAddress, password, accessToken);
@@ -58,7 +67,16 @@ var getInternal = function(authEnabled, emailAddress, password, accessToken, url
 				deferred.reject(err);
 			}
 			else{
-				var toReturn = JSON.parse(body);
+				// check if the body is json or an object
+				var toReturn = body;
+				try{
+					var object = JSON.parse(body);
+					toReturn = object;
+				}
+				catch(ex){
+					// not json, ignore it
+				}
+				
 				deferred.resolve(toReturn);
 			}
 		});
@@ -82,10 +100,6 @@ var postJsonWithEmailAddressAndPassword = function(emailAddress, password, objec
 var postJsonInternal = function(authEnabled, emailAddress, password, accessToken, objectToPost, url){
 	var deferred = Q.defer();
 
-	var jsonToPost = objectToJson(objectToPost);
-
-	console.log(jsonToPost);
-
 	var options = {
 		uri: url,
 		method: "POST",
@@ -100,8 +114,18 @@ var postJsonInternal = function(authEnabled, emailAddress, password, accessToken
 				deferred.reject(error.toString());
 				return;
 			}
-			var toReturn = JSON.parse(body);
-			deferred.resolve(toReturn);
+
+			// check if the body is json or an object
+			var toReturn = body;
+			try{
+				var object = JSON.parse(body);
+				toReturn = object;
+			}
+			catch(ex){
+				// not json, ignore it
+			}
+
+			deferred.resolve(body);
 
 		}).auth(emailAddress, password, accessToken);
 	}
@@ -113,8 +137,17 @@ var postJsonInternal = function(authEnabled, emailAddress, password, accessToken
 				return;
 			}
 
-			var toReturn = JSON.parse(body);
-			deferred.resolve(toReturn);
+			// check if the body is json or an object
+			var toReturn = body;
+			try{
+				var object = JSON.parse(body);
+				toReturn = object;
+			}
+			catch(ex){
+				// not json, ignore it
+			}
+
+			deferred.resolve(body);
 
 		});
 	}
